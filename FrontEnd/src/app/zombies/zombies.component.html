@@ -1,0 +1,31 @@
+<h1 align=center>Listado de Zombies en Inglés</h1>
+<button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target="#modal" style="float: right;">
+    Agregar Zombie
+</button>
+<br>
+<div class="card-body">
+    <h5 class="card-title">Zombies</h5>
+    <table class="mb-0 table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Type</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let zombie of zombies |async; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{zombie.name}}</td>
+                <td>{{zombie.email}}</td>
+                <td>{{zombie.type}}</td>
+                <td><button type="button " class="btn btn-primary" (click)="eliminarZombie(zombie._id)">Borrar</button>
+                    <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target="#modalActualizarZombie" (click)="actSeleccion(zombie._id)" style="margin:7px;">Actualizar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

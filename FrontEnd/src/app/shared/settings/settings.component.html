@@ -1,0 +1,45 @@
+<div class="ui-theme-settings">
+    <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
+      <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
+    </button>
+    <div class="theme-settings__inner">
+        <div class="scrollbar-container">
+            <div class="theme-settings__options-wrapper">
+                <h3 class="themeoptions-heading">
+                    <div>
+                        Header Options
+                    </div>
+                    <button type="button" class="btn-pill btn-shadow btn-wide ml-auto btn btn-focus btn-sm switch-header-cs-class" data-class="">
+              Restore Default
+            </button>
+                </h3>
+                <div class="p-3">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <h5 class="pb-2">Choose Color Scheme</h5>
+                            <div class="theme-settings-swatches">
+                                <div (click)="seleccionar($event, 'header')" *ngFor="let color of colors" class="swatch-holder {{color.background}} switch-header-cs-class" attr.data-class="{{color.background}} header-{{color.text}}"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="themeoptions-heading">
+                    <div>Sidebar Options</div>
+                    <button type="button" class="btn-pill btn-shadow btn-wide ml-auto btn btn-focus btn-sm switch-sidebar-cs-class" data-class="">
+              Restore Default
+            </button>
+                </h3>
+                <div class="p-3">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <h5 class="pb-2">Choose Color Scheme</h5>
+                            <div class="theme-settings-swatches">
+                                <div (click)="seleccionar($event, 'sidebar')" *ngFor="let color of colors" class="swatch-holder {{color.background}} switch-sidebar-cs-class" attr.data-class="{{color.background}} sidebar-{{color.text}}"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

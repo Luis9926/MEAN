@@ -1,0 +1,54 @@
+<div class="modal fade" id="modalRegistro" #modalRegistro tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document ">
+        <div class="modal-content " style="height: 120%">
+
+
+            <div class="container align-items-center">
+                <div class="text-center ">
+                    <h1 class="h3 mb-3 font-weight-normal ">Sign In</h1>
+                    <form [formGroup]="FormRegistro">
+                        <label for="username" class="sr-only ">Email address</label>
+                        <input formControlName="username" type="text" id="username" class="form-control " placeholder="User Name" required=" " autofocus=" ">
+
+
+
+                        <label for="inputEmail " class="sr-only ">Email address</label>
+                        <input formControlName="email" type="email" id="inputEmail " class="form-control " placeholder="Email address " required=" ">
+
+
+
+                        <label for="rol" claslids=" ">Rol</label>
+                        <select formControlName="rol" name="rol" id="rol" class="form-control ">
+        <option>Creator</option>
+        <option>Designer</option>
+        </select>
+
+
+                        <label for="profile" class="sr-only ">Profile Image</label>
+                        <input formControlName="profileImg" type="text" id="profile" class="form-control" placeholder="Image URL">
+
+
+
+                        <label for="inputPassword " class="sr-only ">Password</label>
+                        <input formControlName="password" type="password " id="inputPassword " class="form-control " placeholder="Password " required=" ">
+
+
+
+                        <button class="btn btn-lg btn-primary btn-block " type="submit" (click)="register()" style="margin-top: 20px;">Sign in</button>
+                    </form>
+                </div>
+                <div style="margin-top: 10px;">
+                    <div *ngIf="error" class="mb-3 card text-white card-body bg-danger">
+                        <h5 class="text-white card-title">Error</h5>{{error.error.message}}</div>
+
+                    <div *ngIf="error2" class="mb-3 card text-white card-body bg-danger">
+                        <h5 class="text-white card-title">Error</h5>{{error.error.err.message}}</div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

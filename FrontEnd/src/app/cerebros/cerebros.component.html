@@ -1,0 +1,32 @@
+<h1>Cerebros</h1>
+<button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target="#modalCerebros" style="float: right;">
+    Agregar Cerebro
+</button>
+<br>
+<div class="card-body">
+    <h5 class="card-title">Cerebros</h5>
+    <table class="mb-0 table table-dark">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Flavor</th>
+                <th>Description</th>
+                <th>IQ</th>
+                <th>Picture</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cerebro of cerebros |async; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{cerebro.flavor}}</td>
+                <td>{{cerebro.description}}</td>
+                <td>{{cerebro.iq}}</td>
+                <td><img src={{cerebro.picture}} alt="picture" style="max-width: 100px;"></td>
+                <td><button type="button " class="btn btn-primary" (click)="eliminarCerebro(cerebro._id)">Borrar</button>
+                    <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target="#modalActualizarCerebros" (click)="actSeleccion(cerebro._id,cerebro)" style="margin:7px;">Actualizar</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
